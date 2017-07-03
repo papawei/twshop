@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by tengw on 2017/5/21.
  */
-public interface IProductService {
+public interface ProductService {
     List<Product> findAll();
 
     int insert(Product record);

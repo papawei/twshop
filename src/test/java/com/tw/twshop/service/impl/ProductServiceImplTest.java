@@ -1,7 +1,7 @@
 package com.tw.twshop.service.impl;
 
 import com.tw.twshop.entity.Product;
-import com.tw.twshop.service.IProductService;
+import com.tw.twshop.service.ProductService;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -35,11 +35,11 @@ public class ProductServiceImplTest {
     public void tearDown() throws Exception {
     }
 @Autowired
-private IProductService iProductService;
+private ProductService productService;
     @Test
     public void findAll() throws Exception {
         List<Product> list;
-        list = iProductService.findAll();
+        list = productService.findAll();
         for (Product product:list)
             System.out.print(product.getId());
     }
@@ -69,6 +69,6 @@ private IProductService iProductService;
         product.setUpdatetime(new Date());
         product.setVisitcount(0);
 
-        iProductService.insert(product);
+        productService.insert(product);
     }
 }
