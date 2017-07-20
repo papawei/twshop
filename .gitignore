@@ -1,1 +1,5 @@
 /target
+/twshop-common/target
+/twshop-config/target
+/twshop-web-admin/target
+/twshop-starter-swagger/target
