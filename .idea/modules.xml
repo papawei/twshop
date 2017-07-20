@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/demo/demo.iml" filepath="$PROJECT_DIR$/demo/demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/twshop.iml" filepath="$PROJECT_DIR$/twshop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/twshop-common/twshop-common.iml" filepath="$PROJECT_DIR$/twshop-common/twshop-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/twshop-config/twshop-config.iml" filepath="$PROJECT_DIR$/twshop-config/twshop-config.iml" />
+      <module fileurl="file://$PROJECT_DIR$/twshop-starter-swagger/twshop-starter-swagger.iml" filepath="$PROJECT_DIR$/twshop-starter-swagger/twshop-starter-swagger.iml" />
+      <module fileurl="file://$PROJECT_DIR$/twshop-web-admin/twshop-web-admin.iml" filepath="$PROJECT_DIR$/twshop-web-admin/twshop-web-admin.iml" />
     </modules>
   </component>
 </project>
