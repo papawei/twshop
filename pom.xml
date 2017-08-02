@@ -13,6 +13,15 @@
         <module>twshop-common</module>
         <module>twshop-starter-swagger</module>
         <module>twshop-security</module>
+        <module>twshop-api</module>
+        <module>twshop-jpa-service</module>
+        <module>twshop-mybatis-pagehelper-service</module>
+        <module>twshop-mybatis-mapper-service</module>
+        <module>twshop-hibernate-service</module>
+        <module>twshop-mybatis-service</module>
+        <module>twshop-shiro</module>
+        <module>twshop-model</module>
+        <module>twshop-mybatisplus-service</module>
     </modules>
     <properties>
         <mybatis-spring-boot>1.3.0</mybatis-spring-boot>
@@ -30,6 +39,20 @@
         <ch.mfrey.jackson.version>1.0.2</ch.mfrey.jackson.version>
         <commons-configuration.version>1.10</commons-configuration.version>
         <com.google.zxing.version>3.2.1</com.google.zxing.version>
+        <mybatis.version>3.4.4</mybatis.version>
+        <mapper.version>3.4.2</mapper.version>
+        <druid.version>1.1.2</druid.version>
+        <druid-spring-boot-starter.version>1.1.0</druid-spring-boot-starter.version>
+        <pagehelper-spring-boot-starter.version>1.1.2</pagehelper-spring-boot-starter.version>
+        <mapper-spring-boot-starter.version>1.1.3</mapper-spring-boot-starter.version>
+        <mybatis-spring-boot-starter.version>1.3.0</mybatis-spring-boot-starter.version>
+        <junit.version>4.12</junit.version>
+        <org.mybatis.generator.version>1.3.5</org.mybatis.generator.version>
+        <mybatisplus-spring-boot-starter.version>1.0.4</mybatisplus-spring-boot-starter.version>
+        <mybatis-plus.version>2.0.9</mybatis-plus.version>
+        <mybatis-spring-boot-autoconfigure.version>1.3.0</mybatis-spring-boot-autoconfigure.version>
+<velocity.version>1.7</velocity.version>
+
     </properties>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -38,40 +61,40 @@
     </parent>
     <dependencyManagement>
         <dependencies>
-        <dependency>
-            <groupId>org.mybatis.spring.boot</groupId>
-            <artifactId>mybatis-spring-boot-starter</artifactId>
-            <version>${mybatis-spring-boot}</version>
-        </dependency>
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis-spring-boot}</version>
+            </dependency>
 
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>${mysql-connector}</version>
-        </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-connector}</version>
+            </dependency>
 
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
-        </dependency>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+            </dependency>
 
-        <dependency>
-            <groupId>org.mybatis.generator</groupId>
-            <artifactId>mybatis-generator-core</artifactId>
-            <version>1.3.5</version>
-        </dependency>
+            <dependency>
+                <groupId>org.mybatis.generator</groupId>
+                <artifactId>mybatis-generator-core</artifactId>
+                <version>${org.mybatis.generator.version}</version>
+            </dependency>
 
-        <dependency>
-            <groupId>org.mybatis.generator</groupId>
-            <artifactId>mybatis-generator-maven-plugin</artifactId>
-            <version>1.3.5</version>
-        </dependency>
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>${alibaba-fastjson.version}</version>
-        </dependency>
+            <dependency>
+                <groupId>org.mybatis.generator</groupId>
+                <artifactId>mybatis-generator-maven-plugin</artifactId>
+                <version>${org.mybatis.generator.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${alibaba-fastjson.version}</version>
+            </dependency>
             <dependency>
                 <groupId>io.springfox</groupId>
                 <artifactId>springfox-swagger-ui</artifactId>
@@ -139,27 +162,71 @@
                 <artifactId>javase</artifactId>
                 <version>${com.google.zxing.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis</artifactId>
+                <version>${mybatis.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>tk.mybatis</groupId>
+                <artifactId>mapper</artifactId>
+                <version>${mapper.version}</version>
+            </dependency>
+            <!--mybatis-->
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis-spring-boot-starter.version}</version>
+            </dependency>
+            <!--mapper-->
+            <dependency>
+                <groupId>tk.mybatis</groupId>
+                <artifactId>mapper-spring-boot-starter</artifactId>
+                <version>${mapper-spring-boot-starter.version}</version>
+            </dependency>
+            <!--pagehelper-->
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper-spring-boot-starter</artifactId>
+                <version>${pagehelper-spring-boot-starter.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid-spring-boot-starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatisplus-spring-boot-starter</artifactId>
+                <version>${mybatisplus-spring-boot-starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-autoconfigure</artifactId>
+                <version>${mybatis-spring-boot-autoconfigure.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.velocity</groupId>
+                <artifactId>velocity</artifactId>
+                <version>${velocity.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <build>
         <finalName>maven</finalName>
         <plugins>
-            <plugin>
-                <groupId>org.mybatis.generator</groupId>
-                <artifactId>mybatis-generator-maven-plugin</artifactId>
-                <version>1.3.5</version>
-                <configuration>
-                    <configurationFile>twshop-web-admin/src/main/resources/mybatis-generator.xml</configurationFile>
-                    <overwrite>true</overwrite>
-                </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>mysql</groupId>
-                        <artifactId>mysql-connector-java</artifactId>
-                        <version>${mysql-connector}</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -172,27 +239,27 @@
     </build>
     <!--配置maven阿里云仓库开始,不用去改maven的setting -->
     <!--<repositories>-->
-        <!--<repository>-->
-            <!--<id>public</id>-->
-            <!--<name>local private nexus</name>-->
-            <!--<url>http://maven.aliyun.com/nexus/content/groups/public/</url>-->
-            <!--<releases>-->
-                <!--<enabled>true</enabled>-->
-            <!--</releases>-->
-        <!--</repository>-->
+    <!--<repository>-->
+    <!--<id>public</id>-->
+    <!--<name>local private nexus</name>-->
+    <!--<url>http://maven.aliyun.com/nexus/content/groups/public/</url>-->
+    <!--<releases>-->
+    <!--<enabled>true</enabled>-->
+    <!--</releases>-->
+    <!--</repository>-->
     <!--</repositories>-->
     <!--<pluginRepositories>-->
-        <!--<pluginRepository>-->
-            <!--<id>public</id>-->
-            <!--<name>local private nexus</name>-->
-            <!--<url>http://maven.aliyun.com/nexus/content/groups/public/</url>-->
-            <!--<releases>-->
-                <!--<enabled>true</enabled>-->
-            <!--</releases>-->
-            <!--<snapshots>-->
-                <!--<enabled>false</enabled>-->
-            <!--</snapshots>-->
-        <!--</pluginRepository>-->
+    <!--<pluginRepository>-->
+    <!--<id>public</id>-->
+    <!--<name>local private nexus</name>-->
+    <!--<url>http://maven.aliyun.com/nexus/content/groups/public/</url>-->
+    <!--<releases>-->
+    <!--<enabled>true</enabled>-->
+    <!--</releases>-->
+    <!--<snapshots>-->
+    <!--<enabled>false</enabled>-->
+    <!--</snapshots>-->
+    <!--</pluginRepository>-->
     <!--</pluginRepositories>-->
     <!--配置maven阿里云结束 -->
 </project>

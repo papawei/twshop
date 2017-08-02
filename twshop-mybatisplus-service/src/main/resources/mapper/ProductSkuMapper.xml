@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tw.mapper.ProductSkuMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.tw.model.ProductSku">
+		<id column="id" property="id" />
+		<result column="sku1" property="sku1" />
+		<result column="sku2" property="sku2" />
+		<result column="state" property="state" />
+		<result column="stock_count" property="stockCount" />
+		<result column="sale_count" property="saleCount" />
+		<result column="cost_price" property="costPrice" />
+		<result column="market_price" property="marketPrice" />
+		<result column="review_count" property="reviewCount" />
+		<result column="visit_count" property="visitCount" />
+		<result column="show_image" property="showImage" />
+		<result column="promotion_price" property="promotionPrice" />
+		<result column="show_price" property="showPrice" />
+		<result column="is_best" property="isBest" />
+		<result column="is_hot" property="isHot" />
+		<result column="is_new" property="isNew" />
+		<result column="is_promotion" property="isPromotion" />
+		<result column="add_time" property="addTime" />
+		<result column="update_time" property="updateTime" />
+		<result column="sequence" property="sequence" />
+		<result column="sku_sn" property="skuSn" />
+		<result column="product_id" property="productId" />
+		<result column="shop_id" property="shopId" />
+	</resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, sku1, sku2, state, stock_count AS stockCount, sale_count AS saleCount, cost_price AS costPrice, market_price AS marketPrice, review_count AS reviewCount, visit_count AS visitCount, show_image AS showImage, promotion_price AS promotionPrice, show_price AS showPrice, is_best AS isBest, is_hot AS isHot, is_new AS isNew, is_promotion AS isPromotion, add_time AS addTime, update_time AS updateTime, sequence, sku_sn AS skuSn, product_id AS productId, shop_id AS shopId
+    </sql>
+
+</mapper>

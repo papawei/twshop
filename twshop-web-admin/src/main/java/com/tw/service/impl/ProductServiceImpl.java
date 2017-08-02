@@ -1,7 +1,5 @@
 package com.tw.service.impl;
 
-import com.tw.entity.Product;
-import com.tw.mapper.ProductMapper;
 import com.tw.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
